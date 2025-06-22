@@ -1,9 +1,9 @@
 import os.path
 import subprocess
 import tempfile
+
 from distutils.command.build import build as orig_build
 from distutils.core import Command
-
 from setuptools import Distribution
 from setuptools import Extension
 from setuptools import setup
@@ -65,6 +65,7 @@ setup(
     author='Yelp',
     url='https://github.com/Yelp/dumb-init/',
     platforms='linux',
+    packages=[],
     rust_extensions=[RustExtension('dumb-init', binding=Binding.Exec)],
     cmdclass={
         'bdist_wheel': bdist_wheel,
